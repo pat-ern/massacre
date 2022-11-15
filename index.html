@@ -85,50 +85,137 @@
     5: "Logs2"},
     {
     0: "Kunta",
-    1: "Deathknight",
+    1: "Death Knight",
     2: "Frost",
     3: "Tank",
     4: "4000",
-    5: "Logs3"
-    }
+    5: "Logs3"},
+    {
+    0: "Magyos",
+    1: "Mage",
+    2: "Arcane",
+    3: "DPS",
+    4: "4000",
+    5: "Logs4"},
+    {
+    0: "Radamir",
+    1: "Hunter",
+    2: "Beast Mastery",
+    3: "DPS",
+    4: "4000",
+    5: "Logs5"},
+    {
+    0: "Darlune",
+    1: "Hunter",
+    2: "Marksmanship",
+    3: "DPS",
+    4: "4000",
+    5: "Logs6"},
+    {
+    0: "Chamorca",
+    1: "Shaman",
+    2: "Enhancement",
+    3: "DPS",
+    4: "3977",
+    5: "Logs7"},
+    {
+    0: "Sottile",
+    1: "Hunter",
+    2: "Survival",
+    3: "DPS",
+    4: "4000",
+    5: "Logs8"},
+    {
+    0: "Virueladmono",
+    1: "Priest",
+    2: "Shadow",
+    3: "DPS",
+    4: "4000",
+    5: "Logs9"},
+    {
+    0: "Vonchanclas",
+    1: "Druid",
+    2: "Balance",
+    3: "DPS",
+    4: "4001",
+    5: "Logs10"},
+    
+  
+
   ];
+
+  classColors = {
+    "Deathknight": "#C41F3B",
+    "Druid": "#FF7D0A",
+    "Hunter": "#ABD473",
+    "Mage": "#69CCF0",
+    "Paladin": "#F58CBA",
+    "Priest": "#FFFFFF",
+    "Rogue": "#FFF569",
+    "Shaman": "#0070DE",
+    "Warlock": "#9482C9",
+    "Warrior": "#C79C6E",
+  };
 
 
   function tableCreate() {
 
-    console.log(datos[0]);
-
     var tbl = document.getElementsByTagName('table')[0];
     var tbdy = document.getElementsByTagName('tbody')[0];
     
-    for (var i = 0; i < datos.length; i++) { 
+    for (var i = 0; i < datos.length; i++) {  // iteracion por cada jugador
 
       var tr = document.createElement('tr');
 
-      for (var j = 0; j < 7; j++) { 
+      for (var j = 0; j < 7; j++) { // iteracion por cada dato del jugador
+
         var td = document.createElement('td');
 
         if (j == 0) {
           td.appendChild(document.createTextNode(i+1));
+        } else if (j >= 1 && j <= 5) {
+          td.appendChild(document.createTextNode(datos[i][j-1]));
         } else if (j == 6) {
-          var a = document.createElement('a');
+          var a = document.createElement('a');  //crea el link
           a.setAttribute('href', datos[i][j]);
           a.innerHTML = 'Logs';
           td.appendChild(a);
-        } else {
-          td.innerHTML = datos[i][j];
-        }
+        } 
 
         tr.appendChild(td);
 
       }
 
-      if (datos[i][1] == "Paladin") {
-          tr.style.color = "pink";
-        } else if (datos[i][1] == "Warrior") {
-          tr.style.color = "#413a3a";
-        } else if (datos[i][1] == "Deathknight") {
-          tr.style.color = "red";
+      switch (datos[i][1]) {
+        case 'Death Knight':
+          tr.style.color = classColors.Deathknight;
+          break;
+        case 'Druid':
+          tr.style.color = classColors.Druid;
+          break;
+        case 'Hunter':
+          tr.style.color = classColors.Hunter;
+          break;
+        case 'Mage':
+          tr.style.color = classColors.Mage;
+          break;
+        case 'Paladin':
+          tr.style.color = classColors.Paladin;
+          break;
+        case 'Priest':
+          tr.style.color = classColors.Priest;
+          break;
+        case 'Rogue':
+          tr.style.color = classColors.Rogue;
+          break;
+        case 'Shaman':
+          tr.style.color = classColors.Shaman;
+          break;
+        case 'Warlock':
+          tr.style.color = classColors.Warlock;
+          break;
+        case 'Warrior':
+          tr.style.color = classColors.Warrior;
       }
 
       tbdy.appendChild(tr);
