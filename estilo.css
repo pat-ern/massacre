@@ -1,0 +1,11 @@
+/* import fonts from google fonts */
+@import url('https://fonts.googleapis.com/css?family=New+Rocker');
+
+body {
+    background-color: #202020;
+}
+
+#massacre-titulo {
+ font-family: 'New Rocker', cursive;
+ color: rgb(251, 183, 66);
+}
