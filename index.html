@@ -75,72 +75,77 @@
     2: "Holy",
     3: "Healer",
     4: "4055",
-    5: "Logs"},
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/arcadio"},
     {
-    0: "Steingrimur",
+    0: "Steingrímur",
     1: "Warrior",
     2: "Proteccion",
     3: "Tank",
     4: "4000",
-    5: "Logs2"},
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/steingrímur"},
     {
     0: "Kunta",
     1: "Death Knight",
     2: "Frost",
     3: "Tank",
     4: "4000",
-    5: "Logs3"},
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/kunta"},
     {
     0: "Magyos",
     1: "Mage",
     2: "Arcane",
     3: "DPS",
-    4: "4000",
-    5: "Logs4"},
+    4: "4081",
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/magyos"},
     {
     0: "Radamir",
     1: "Hunter",
-    2: "Beast Mastery",
+    2: "Survival",
     3: "DPS",
     4: "4000",
-    5: "Logs5"},
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/radamir"},
     {
     0: "Darlune",
     1: "Hunter",
     2: "Marksmanship",
     3: "DPS",
     4: "4000",
-    5: "Logs6"},
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/darlune"},
     {
     0: "Chamorca",
     1: "Shaman",
     2: "Enhancement",
     3: "DPS",
     4: "3977",
-    5: "Logs7"},
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/chamorca"},
     {
     0: "Sottile",
     1: "Hunter",
     2: "Survival",
     3: "DPS",
-    4: "4000",
-    5: "Logs8"},
+    4: "4006",
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/sottile"},
     {
     0: "Virueladmono",
     1: "Priest",
     2: "Discipline",
     3: "Healer",
     4: "4000",
-    5: "Logs9"},
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/virueladmono"},
     {
     0: "Vonchanclas",
     1: "Druid",
     2: "Restoration",
     3: "Healer",
     4: "4001",
-    5: "Logs10"},
-    
-  
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/vonchanclas"},
+    {
+    0: "Carnagee",
+    1: "Rogue",
+    2: "Assassination",
+    3: "DPS",
+    4: "4000",
+    5: "https://classic.warcraftlogs.com/character/us/eranikus/carnagee"},
 
   ];
 
@@ -177,7 +182,7 @@
           td.appendChild(document.createTextNode(datos[i][j-1]));
         } else if (j == 6) {
           var a = document.createElement('a');  //crea el link
-          a.setAttribute('href', datos[i][j]);
+          a.setAttribute('href', datos[i][j-1]);
           a.innerHTML = 'Logs';
           td.appendChild(a);
         } 
