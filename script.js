@@ -1,84 +1,3 @@
-var datos  = [
-    {
-    0: "Arcadio",
-    1: "Paladin",
-    2: "Holy",
-    3: "Healer",
-    4: "4055",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/arcadio"},
-    {
-    0: "Steingrímur",
-    1: "Warrior",
-    2: "Proteccion",
-    3: "Tank",
-    4: "4000",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/steingrímur"},
-    {
-    0: "Kunta",
-    1: "Death Knight",
-    2: "Frost",
-    3: "Tank",
-    4: "4000",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/kunta"},
-    {
-    0: "Magyos",
-    1: "Mage",
-    2: "Arcane",
-    3: "DPS",
-    4: "4081",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/magyos"},
-    {
-    0: "Radamir",
-    1: "Hunter",
-    2: "Survival",
-    3: "DPS",
-    4: "3943",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/radamir"},
-    {
-    0: "Darlune",
-    1: "Hunter",
-    2: "Survivor",
-    3: "DPS",
-    4: "4006",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/darlune"},
-    {
-    0: "Chamorca",
-    1: "Shaman",
-    2: "Enhancement",
-    3: "DPS",
-    4: "3977",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/chamorca"},
-    {
-    0: "Sottile",
-    1: "Hunter",
-    2: "Survival",
-    3: "DPS",
-    4: "4006",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/sottile"},
-    {
-    0: "Virueladmono",
-    1: "Priest",
-    2: "Discipline",
-    3: "Healer",
-    4: "3884",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/virueladmono"},
-    {
-    0: "Vonchanclas",
-    1: "Druid",
-    2: "Restoration",
-    3: "Healer",
-    4: "4001",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/vonchanclas"},
-    {
-    0: "Carnagee",
-    1: "Rogue",
-    2: "Assassination",
-    3: "DPS",
-    4: "4000",
-    5: "https://classic.warcraftlogs.com/character/us/eranikus/carnagee"},
-
-  ];
-
   classColors = {
     "Deathknight": "#C41F3B",
     "Druid": "#FF7D0A",
@@ -92,7 +11,6 @@ var datos  = [
     "Warrior": "#C79C6E",
   };
 
-
   var queryURL = "https://pat-ern.github.io/massacre_web/jugadores.json";
 
   fetch(queryURL)
@@ -102,22 +20,20 @@ var datos  = [
         // to a pure JavaScript 
         // object for the next then's callback
         return response.json();
-        console.log(response);
     })
-    .then(function (users) {
-        // users is a JavaScript object here
-        console.log(users);
+    .then(function (characters) {
+        // characters is a JavaScript object here
+        tableCreate(characters.jugador);
     })
     .catch(function (error) {
         console.log('Error during fetch: ' + error.message);
     });
 
-
-  criterioOrden = "Nombre";
+  criterio = "Nombre";
 
   ordenarPor = (a, b) => {
 
-    switch (criterioOrden) {
+    switch (criterio) {
     case "Nombre":
       this.sortableData = 0;
       break;
@@ -147,7 +63,7 @@ var datos  = [
 
   datos.sort(this.ordenarPor);
 
-  function tableCreate() {
+  function tableCreate(datos) {
 
     var tbl = document.getElementsByTagName('table')[0];
     sorttable.makeSortable(tbl);
@@ -163,14 +79,17 @@ var datos  = [
 
         if (j == 0) {
           td.appendChild(document.createTextNode(i+1));
-        } else if (j >= 1 && j <= 5) {
-          td.appendChild(document.createTextNode(datos[i][j-1]));
+        } else if (j == 2) {
+          td.innerHTML = '<img src="img/class/' + datos[i][1].replace(/\s/g, "") + '.png" alt="' + datos[i][1] + '" width="25" height="25">';
+          td.appendChild(document.createTextNode(" "+datos[i][j-1]));
         } else if (j == 6) {
           var a = document.createElement('a');  //crea el link
           a.setAttribute('href', datos[i][j-1]);
           a.innerHTML = 'Logs';
           td.appendChild(a);
-        } 
+        }  else {
+          td.appendChild(document.createTextNode(datos[i][j-1]));
+        }
 
         tr.appendChild(td);
 
