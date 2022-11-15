@@ -1,77 +1,92 @@
-[{
-    "0": "Arcadio",
-    "1": "Paladin",
-    "2": "Holy",
-    "3": "Healer",
-    "4": "4055",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/arcadio"},
 {
-    "0": "Steingrímur",
-    "1": "Warrior",
-    "2": "Proteccion",
-    "3": "Tank",
-    "4": "4000",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/steingrímur"},
-{
-    "0": "Kunta",
-    "1": "Death Knight",
-    "2": "Frost",
-    "3": "Tank",
-    "4": "4000",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/kunta"},
-{
-    "0": "Magyos",
-    "1": "Mage",
-    "2": "Arcane",
-    "3": "DPS",
-    "4": "4081",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/magyos"},
-{
-    "0": "Radamir",
-    "1": "Hunter",
-    "2": "Survival",
-    "3": "DPS",
-    "4": "3943",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/radamir"},
-{
-    "0": "Darlune",
-    "1": "Hunter",
-    "2": "Survivor",
-    "3": "DPS",
-    "4": "4006",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/darlune"},
-{
-    "0": "Chamorca",
-    "1": "Shaman",
-    "2": "Enhancement",
-    "3": "DPS",
-    "4": "3977",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/chamorca"},
-{
-    "0": "Sottile",
-    "1": "Hunter",
-    "2": "Survival",
-    "3": "DPS",
-    "4": "4006",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/sottile"},
-{
-    "0": "Virueladmono",
-    "1": "Priest",
-    "2": "Discipline",
-    "3": "Healer",
-    "4": "3884",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/virueladmono"},
-{
-    "0": "Vonchanclas",
-    "1": "Druid",
-    "2": "Restoration",
-    "3": "Healer",
-    "4": "4001",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/vonchanclas"},
-{
-    "0": "Carnagee",
-    "1": "Rogue",
-    "2": "Assassination",
-    "3": "DPS",
-    "4": "4000",
-    "5": "https://classic.warcraftlogs.com/character/us/eranikus/carnagee"}]
+    "jugador": [
+        {
+            "0": "Arcadio",
+            "1": "Paladin",
+            "2": "Holy",
+            "3": "Healer",
+            "4": "4055",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/arcadio"
+        },
+        {
+            "0": "Steingrímur",
+            "1": "Warrior",
+            "2": "Proteccion",
+            "3": "Tank",
+            "4": "4000",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/steingrímur"
+        },
+        {
+            "0": "Kunta",
+            "1": "Death Knight",
+            "2": "Frost",
+            "3": "Tank",
+            "4": "4000",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/kunta"
+        },
+        {
+            "0": "Magyos",
+            "1": "Mage",
+            "2": "Arcane",
+            "3": "DPS",
+            "4": "4081",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/magyos"
+        },
+        {
+            "0": "Radamir",
+            "1": "Hunter",
+            "2": "Survival",
+            "3": "DPS",
+            "4": "3943",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/radamir"
+        },
+        {
+            "0": "Darlune",
+            "1": "Hunter",
+            "2": "Survivor",
+            "3": "DPS",
+            "4": "4006",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/darlune"
+        },
+        {
+            "0": "Chamorca",
+            "1": "Shaman",
+            "2": "Enhancement",
+            "3": "DPS",
+            "4": "3977",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/chamorca"
+        },
+        {
+            "0": "Sottile",
+            "1": "Hunter",
+            "2": "Survival",
+            "3": "DPS",
+            "4": "4006",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/sottile"
+        },
+        {
+            "0": "Virueladmono",
+            "1": "Priest",
+            "2": "Discipline",
+            "3": "Healer",
+            "4": "3884",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/virueladmono"
+        },
+        {
+            "0": "Vonchanclas",
+            "1": "Druid",
+            "2": "Restoration",
+            "3": "Healer",
+            "4": "4001",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/vonchanclas"
+        },
+        {
+            "0": "Carnagee",
+            "1": "Rogue",
+            "2": "Assassination",
+            "3": "DPS",
+            "4": "4000",
+            "5": "https://classic.warcraftlogs.com/character/us/eranikus/carnagee"
+        }
+    ]
+}

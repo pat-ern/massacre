@@ -102,11 +102,11 @@ var datos  = [
         // to a pure JavaScript 
         // object for the next then's callback
         return response.json();
-        console.log(response)
+        console.log(response);
     })
     .then(function (users) {
         // users is a JavaScript object here
-        console.log(users)
+        console.log(users);
     })
     .catch(function (error) {
         console.log('Error during fetch: ' + error.message);
