@@ -11,7 +11,7 @@
     "Warrior": "#C79C6E",
   };
 
-  var queryURL = "https://pat-ern.github.io/massacre_web/jugadores.json";
+  var queryURL = "https://pat-ern.github.io/massacre/jugadores.json";
 
   fetch(queryURL)
     .then(function (response) {
