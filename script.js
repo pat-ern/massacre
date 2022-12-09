@@ -91,41 +91,32 @@ function crearTabla(datos) {
 
     var tr = document.createElement('tr');
 
-    for (var j = 0; j < 6; j++) { // iteracion por cada dato del jugador
+    for (var j = 0; j < 4; j++) { // iteracion por cada dato del jugador
 
       var td = document.createElement('td');
 
-      if (j == 0) { // id en la tabla
-
-        var id;
-
-        if (i < 9) {
-          id = "0" + (i+1);
-        } else {
-          id = i+1;
-        }
-
-        td.appendChild(document.createTextNode(id));
-
-      } else if (j == 2) { // clase con icono
-
-        td.innerHTML = '<img src="img/class/' + datos[i][1].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][1] + '" width="20" height="auto">';
-        td.appendChild(document.createTextNode(" "+datos[i][j-1]));
-
-      } else if (j == 3) { // especializacion con icono
-
-        td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][2].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
-        td.appendChild(document.createTextNode(" "+datos[i][j-1]));
-
-      } else if (j == 5) { // logs 
+      if (j == 0) { // Nombre con link de logs
 
         var a = document.createElement('a');  
         a.setAttribute('href', LOGS_URL + datos[i][0]);
-        a.innerHTML = 'Logs';
+        a.innerHTML = datos[i][j];
+        a.style.color = setColor(datos[i][1]);
         td.appendChild(a);
 
-      }  else {
-        td.appendChild(document.createTextNode(datos[i][j-1]));
+      } else if (j == 1) { // clase con icono
+
+        td.innerHTML = '<img src="img/class/' + datos[i][1].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][1] + '" width="20" height="auto">';
+        td.appendChild(document.createTextNode(" "+datos[i][j]));
+
+      } else if (j == 2) { // especializacion con icono
+
+        td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][2].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
+        td.appendChild(document.createTextNode(" "+datos[i][j]));
+
+      } else {
+
+        td.appendChild(document.createTextNode(datos[i][j]));
+
       }
 
       tr.appendChild(td);

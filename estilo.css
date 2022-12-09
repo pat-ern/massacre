@@ -10,3 +10,8 @@ body {
  font-family: 'New Rocker', cursive;
  color: rgb(251, 183, 66);
 }
+
+/* text decoration none on table link  */
+a {
+    text-decoration: none;
+}
