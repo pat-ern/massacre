@@ -1,130 +1,130 @@
 {
     "jugador": [
         {
-            "0": "Arcadio",
-            "1": "Paladin",
-            "2": "Holy",
-            "3": "Healer"
+            "0": "arcadio",
+            "1": "paladin",
+            "2": "holy",
+            "3": "healer"
         },
         {
-            "0": "Steingrímur",
-            "1": "Warrior",
-            "2": "Protection",
-            "3": "Tank"
+            "0": "steingrímur",
+            "1": "warrior",
+            "2": "protection",
+            "3": "tank"
         },
         {
-            "0": "Kunta",
-            "1": "Deathknight",
-            "2": "Frost",
-            "3": "Tank"
+            "0": "kunta",
+            "1": "deathknight",
+            "2": "frost",
+            "3": "tank"
         },
         {
-            "0": "Magyos",
-            "1": "Mage",
-            "2": "Arcane",
-            "3": "DPS"
+            "0": "magyos",
+            "1": "mage",
+            "2": "arcane",
+            "3": "dps"
         },
         {
-            "0": "Radamir",
-            "1": "Hunter",
-            "2": "Survival",
-            "3": "DPS"
+            "0": "radamir",
+            "1": "hunter",
+            "2": "survival",
+            "3": "dps"
         },
         {
-            "0": "Darlune",
-            "1": "Hunter",
-            "2": "Survival",
-            "3": "DPS"
+            "0": "darlune",
+            "1": "hunter",
+            "2": "survival",
+            "3": "dps"
         },
         {
-            "0": "Chamorca",
-            "1": "Shaman",
-            "2": "Enhancement",
-            "3": "DPS"
+            "0": "chamorca",
+            "1": "shaman",
+            "2": "enhancement",
+            "3": "dps"
         },
         {
-            "0": "Sottile",
-            "1": "Hunter",
-            "2": "Survival",
-            "3": "DPS"
+            "0": "sottile",
+            "1": "hunter",
+            "2": "survival",
+            "3": "dps"
         },
         {
-            "0": "Virueladmono",
-            "1": "Priest",
-            "2": "Discipline",
-            "3": "Healer"
+            "0": "virueladmono",
+            "1": "priest",
+            "2": "discipline",
+            "3": "healer"
         },
         {
-            "0": "Vonchanclas",
-            "1": "Druid",
-            "2": "Restoration",
-            "3": "Healer"
+            "0": "vonchanclas",
+            "1": "druid",
+            "2": "restoration",
+            "3": "healer"
         },
         {
-            "0": "Carnagee",
-            "1": "Rogue",
-            "2": "Assassination",
-            "3": "DPS"
+            "0": "carnagee",
+            "1": "rogue",
+            "2": "assassination",
+            "3": "dps"
         },
         {
-            "0": "Eldrest",
-            "1": "Paladin",
-            "2": "Protection",
-            "3": "Tank"
+            "0": "eldrest",
+            "1": "paladin",
+            "2": "protection",
+            "3": "tank"
         },
         {
-            "0": "Xplotas",
-            "1": "Druid",
-            "2": "Feral",
-            "3": "DPS"
+            "0": "xplotas",
+            "1": "druid",
+            "2": "feral",
+            "3": "dps"
         },
         {
-            "0": "Mhysteria",
-            "1": "Priest",
-            "2": "Shadow",
-            "3": "DPS"
+            "0": "mhysteria",
+            "1": "priest",
+            "2": "shadow",
+            "3": "dps"
         },
         {
-            "0": "Xtabay",
-            "1": "Priest",
-            "2": "Shadow",
-            "3": "DPS"
+            "0": "xtabay",
+            "1": "priest",
+            "2": "shadow",
+            "3": "dps"
         },
         {
-            "0": "Dashies",
-            "1": "Mage",
-            "2": "Arcane",
-            "3": "DPS"
+            "0": "dashies",
+            "1": "mage",
+            "2": "arcane",
+            "3": "dps"
         },
         {
-            "0": "Tugatita",
-            "1": "Paladin",
-            "2": "Retribution",
-            "3": "DPS"
+            "0": "tugatita",
+            "1": "paladin",
+            "2": "retribution",
+            "3": "dps"
         },
         {
-            "0": "Trollhere",
-            "1": "Priest",
-            "2": "Holy",
-            "3": "Healer"
+            "0": "trollhere",
+            "1": "priest",
+            "2": "holy",
+            "3": "healer"
         },
         {
-            "0": "Srloinzz",
-            "1": "Druid",
-            "2": "Restoration",
-            "3": "Healer"
+            "0": "srloinzz",
+            "1": "druid",
+            "2": "restoration",
+            "3": "healer"
         },
         {
-            "0": "Sicknessx",
-            "1": "Deathknight",
-            "2": "Unholy",
-            "3": "DPS"
+            "0": "sicknessx",
+            "1": "deathknight",
+            "2": "unholy",
+            "3": "dps"
         },
         {
-            "0": "Trollolo",
-            "1": "Shaman",
-            "2": "Elemental",
-            "3": "DPS"
+            "0": "trollolo",
+            "1": "shaman",
+            "2": "elemental",
+            "3": "dps"
         }
     ]
 }

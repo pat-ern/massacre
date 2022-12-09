@@ -100,17 +100,26 @@ function crearTabla(datos) {
         var a = document.createElement('a');  
         a.setAttribute('href', LOGS_URL + datos[i][j]);
         a.innerHTML = datos[i][j];
-        a.style.color = setColor(datos[i][1]);
+        a.style.color = setColor(datos[i][j+1]);
         td.appendChild(a);
 
       } else if (j == 1) { // clase con icono
 
-        td.innerHTML = '<img src="img/class/' + datos[i][j].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
-        td.appendChild(document.createTextNode(" "+datos[i][j]));
+        let className = datos[i][j].toLowerCase();
+
+        if (className == "deathknight") {
+          className = className.substring(5,0) + ' ' + className.substring(13,5);
+        }
+
+        // tranform the first letter of each word to uppercase
+        className = className.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+
+        td.innerHTML = '<img src="img/class/' + datos[i][j].toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
+        td.appendChild(document.createTextNode(" "+className));
 
       } else if (j == 2) { // especializacion con icono
 
-        td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][j].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
+        td.innerHTML = '<img src="img/spec/' + datos[i][1].toLowerCase() +"/"+ datos[i][j].toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
         td.appendChild(document.createTextNode(" "+datos[i][j]));
 
       } else {
