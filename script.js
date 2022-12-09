@@ -1,8 +1,10 @@
-const API_URL = "https://pat-ern.github.io/massacre/jugadores.json";
-const LOGS_URL = "https://classic.warcraftlogs.com/character/us/eranikus/"; 
-let criterioOrden = "Nombre"; // criterio de ordenamiento inicial (por defecto)
+var queryURL = "https://pat-ern.github.io/massacre/jugadores.json";
 
-const classColors = { // colores de las clases
+criterio = "Nombre"; // criterio de ordenamiento inicial (por defecto)
+
+logsUrl = "https://classic.warcraftlogs.com/character/us/eranikus/"; // url de logs
+  
+classColors = { // colores de las clases
   "Deathknight": "#C41F3B",
   "Druid": "#FF7D0A",
   "Hunter": "#ABD473",
@@ -15,9 +17,7 @@ const classColors = { // colores de las clases
   "Warrior": "#C79C6E",
 };
 
-///////////////////////////// FUNCIONES /////////////////////////////
-
-fetch(API_URL)
+fetch(queryURL)
   .then(function (response) {
       // response.json() returns a json string,
       // returning it will convert it 
@@ -35,7 +35,7 @@ fetch(API_URL)
 
 ordenarPor = (a, b) => {
 
-  switch (criterioOrden) {
+  switch (criterio) {
   case "Nombre":
     this.sortableData = 0;
     break;
@@ -160,3 +160,5 @@ function crearTabla(datos) {
   tbl.appendChild(tbdy);
 
 }
+
+tableCreate();
