@@ -1,23 +1,4 @@
-var queryURL = "https://pat-ern.github.io/massacre/jugadores.json";
-
-criterio = "Nombre"; // criterio de ordenamiento inicial (por defecto)
-
-logsUrl = "https://classic.warcraftlogs.com/character/us/eranikus/"; // url de logs
-  
-classColors = { // colores de las clases
-  "Deathknight": "#C41F3B",
-  "Druid": "#FF7D0A",
-  "Hunter": "#ABD473",
-  "Mage": "#69CCF0",
-  "Paladin": "#F58CBA",
-  "Priest": "#FFFFFF",
-  "Rogue": "#FFF569",
-  "Shaman": "#0070DE",
-  "Warlock": "#9482C9",
-  "Warrior": "#C79C6E",
-};
-
-fetch(queryURL)
+fetch(API_URL)
   .then(function (response) {
       // response.json() returns a json string,
       // returning it will convert it 
@@ -35,21 +16,21 @@ fetch(queryURL)
 
 ordenarPor = (a, b) => {
 
+  var sortableData;
+  var criterio = "Nombre";
+
   switch (criterio) {
   case "Nombre":
-    this.sortableData = 0;
+    sortableData = 0;
     break;
   case "Clase":
-    this.sortableData = 1;
+    sortableData = 1;
     break;
   case "Especialización":
-    this.sortableData = 2;
+    sortableData = 2;
     break;
   case "Rol":
-    this.sortableData = 3;
-    break;
-  case "GS":
-    this.sortableData = 4;
+    sortableData = 3;
     break;
   }
 
@@ -67,34 +48,34 @@ function setColor(clase) {
   let color;
   switch (clase) {
     case 'Death Knight':
-      color = classColors.Deathknight;
+      color = CLASS_COLORS.Deathknight;
       break;
     case 'Druid':
-      color = classColors.Druid;
+      color = CLASS_COLORS.Druid;
       break;
     case 'Hunter':
-      color = classColors.Hunter;
+      color = CLASS_COLORS.Hunter;
       break;
     case 'Mage':
-      color = classColors.Mage;
+      color = CLASS_COLORS.Mage;
       break;
     case 'Paladin':
-      color = classColors.Paladin;
+      color = CLASS_COLORS.Paladin;
       break;
     case 'Priest':
-      color = classColors.Priest;
+      color = CLASS_COLORS.Priest;
       break;
     case 'Rogue':
-      color = classColors.Rogue;
+      color = CLASS_COLORS.Rogue;
       break;
     case 'Shaman':
-      color = classColors.Shaman;
+      color = CLASS_COLORS.Shaman;
       break;
     case 'Warlock':
-      color = classColors.Warlock;
+      color = CLASS_COLORS.Warlock;
       break;
     case 'Warrior':
-      color = classColors.Warrior;
+      color = CLASS_COLORS.Warrior;
   }
   return color;
 };
@@ -139,7 +120,7 @@ function crearTabla(datos) {
       } else if (j == 5) { // logs 
 
         var a = document.createElement('a');  
-        a.setAttribute('href', logsUrl + datos[i][0]);
+        a.setAttribute('href', LOGS_URL + datos[i][0]);
         a.innerHTML = 'Logs';
         td.appendChild(a);
 
@@ -159,6 +140,4 @@ function crearTabla(datos) {
 
   tbl.appendChild(tbdy);
 
-}
-
-tableCreate();
+};
