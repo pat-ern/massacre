@@ -1,141 +1,146 @@
-  classColors = {
-    "Deathknight": "#C41F3B",
-    "Druid": "#FF7D0A",
-    "Hunter": "#ABD473",
-    "Mage": "#69CCF0",
-    "Paladin": "#F58CBA",
-    "Priest": "#FFFFFF",
-    "Rogue": "#FFF569",
-    "Shaman": "#0070DE",
-    "Warlock": "#9482C9",
-    "Warrior": "#C79C6E",
-  };
+var queryURL = "https://pat-ern.github.io/massacre/jugadores.json";
 
-  var queryURL = "https://pat-ern.github.io/massacre/jugadores.json";
+criterio = "Nombre"; // criterio de ordenamiento inicial (por defecto)
+  
+classColors = { // colores de las clases
+  "Deathknight": "#C41F3B",
+  "Druid": "#FF7D0A",
+  "Hunter": "#ABD473",
+  "Mage": "#69CCF0",
+  "Paladin": "#F58CBA",
+  "Priest": "#FFFFFF",
+  "Rogue": "#FFF569",
+  "Shaman": "#0070DE",
+  "Warlock": "#9482C9",
+  "Warrior": "#C79C6E",
+};
 
-  fetch(queryURL)
-    .then(function (response) {
-        // response.json() returns a json string,
-        // returning it will convert it 
-        // to a pure JavaScript 
-        // object for the next then's callback
-        return response.json();
-    })
-    .then(function (characters) {
-        // characters is a JavaScript object here
-        tableCreate(characters.jugador);
-    })
-    .catch(function (error) {
-        console.log('Error during fetch: ' + error.message);
-    });
+fetch(queryURL)
+  .then(function (response) {
+      // response.json() returns a json string,
+      // returning it will convert it 
+      // to a pure JavaScript 
+      // object for the next then's callback
+      return response.json();
+  })
+  .then(function (characters) {
+      // characters is a JavaScript object here
+      crearTabla(characters.jugador);
+  })
+  .catch(function (error) {
+      console.log('Error during fetch: ' + error.message);
+  });
 
-  criterio = "Nombre";
+ordenarPor = (a, b) => {
 
-  ordenarPor = (a, b) => {
+  switch (criterio) {
+  case "Nombre":
+    this.sortableData = 0;
+    break;
+  case "Clase":
+    this.sortableData = 1;
+    break;
+  case "Especialización":
+    this.sortableData = 2;
+    break;
+  case "Rol":
+    this.sortableData = 3;
+    break;
+  case "GS":
+    this.sortableData = 4;
+    break;
+  }
 
-    switch (criterio) {
-    case "Nombre":
-      this.sortableData = 0;
+  if (a[sortableData] < b[sortableData]) {
+    return -1;
+  }
+  if (a[sortableData] > b[sortableData]) {
+    return 1;
+  }
+  return 0;
+  
+};
+
+function setColor(clase) {
+  let color;
+  switch (clase) {
+    case 'Death Knight':
+      color = classColors.Deathknight;
       break;
-    case "Clase":
-      this.sortableData = 1;
+    case 'Druid':
+      color = classColors.Druid;
       break;
-    case "Especialización":
-      this.sortableData = 2;
+    case 'Hunter':
+      color = classColors.Hunter;
       break;
-    case "Rol":
-      this.sortableData = 3;
+    case 'Mage':
+      color = classColors.Mage;
       break;
-    case "GS":
-      this.sortableData = 4;
+    case 'Paladin':
+      color = classColors.Paladin;
       break;
-    }
+    case 'Priest':
+      color = classColors.Priest;
+      break;
+    case 'Rogue':
+      color = classColors.Rogue;
+      break;
+    case 'Shaman':
+      color = classColors.Shaman;
+      break;
+    case 'Warlock':
+      color = classColors.Warlock;
+      break;
+    case 'Warrior':
+      color = classColors.Warrior;
+  }
+  return color;
+};
 
-    if (a[sortableData] < b[sortableData]) {
-      return -1;
-    }
-    if (a[sortableData] > b[sortableData]) {
-      return 1;
-    }
-    return 0;
-    
-  };
+function crearTabla(datos) {
 
   datos.sort(this.ordenarPor);
+  var tbl = document.getElementsByTagName('table')[0];
+  sorttable.makeSortable(tbl);
+  var tbdy = document.getElementsByTagName('tbody')[0];
+  
+  for (var i = 0; i < datos.length; i++) {  // iteracion por cada jugador
 
-  function tableCreate(datos) {
+    var tr = document.createElement('tr');
 
-    var tbl = document.getElementsByTagName('table')[0];
-    sorttable.makeSortable(tbl);
-    var tbdy = document.getElementsByTagName('tbody')[0];
-    
-    for (var i = 0; i < datos.length; i++) {  // iteracion por cada jugador
+    for (var j = 0; j < 7; j++) { // iteracion por cada dato del jugador
 
-      var tr = document.createElement('tr');
+      var td = document.createElement('td');
 
-      for (var j = 0; j < 7; j++) { // iteracion por cada dato del jugador
-
-        var td = document.createElement('td');
-
-        if (j == 0) {
-          td.appendChild(document.createTextNode(i+1));
-        } else if (j == 2) {
-          td.innerHTML = '<img src="img/class/' + datos[i][1].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][1] + '" width="20" height="auto">';
-          td.appendChild(document.createTextNode(" "+datos[i][j-1]));
-        } else if (j == 3) {
-          td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][2].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
-          td.appendChild(document.createTextNode(" "+datos[i][j-1]));
-        } else if (j == 6) {
-          var a = document.createElement('a');  //crea el link
-          a.setAttribute('href', datos[i][j-1]);
-          a.innerHTML = 'Logs';
-          td.appendChild(a);
-        }  else {
-          td.appendChild(document.createTextNode(datos[i][j-1]));
-        }
-
-        tr.appendChild(td);
-
+      if (j == 0) {
+        td.appendChild(document.createTextNode(i+1));
+      } else if (j == 2) {
+        td.innerHTML = '<img src="img/class/' + datos[i][1].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][1] + '" width="20" height="auto">';
+        td.appendChild(document.createTextNode(" "+datos[i][j-1]));
+      } else if (j == 3) {
+        td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][2].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
+        td.appendChild(document.createTextNode(" "+datos[i][j-1]));
+      } else if (j == 6) {
+        var a = document.createElement('a');  //crea el link
+        a.setAttribute('href', datos[i][j-1]);
+        a.innerHTML = 'Logs';
+        td.appendChild(a);
+      }  else {
+        td.appendChild(document.createTextNode(datos[i][j-1]));
       }
 
-      switch (datos[i][1]) {
-        case 'Death Knight':
-          tr.style.color = classColors.Deathknight;
-          break;
-        case 'Druid':
-          tr.style.color = classColors.Druid;
-          break;
-        case 'Hunter':
-          tr.style.color = classColors.Hunter;
-          break;
-        case 'Mage':
-          tr.style.color = classColors.Mage;
-          break;
-        case 'Paladin':
-          tr.style.color = classColors.Paladin;
-          break;
-        case 'Priest':
-          tr.style.color = classColors.Priest;
-          break;
-        case 'Rogue':
-          tr.style.color = classColors.Rogue;
-          break;
-        case 'Shaman':
-          tr.style.color = classColors.Shaman;
-          break;
-        case 'Warlock':
-          tr.style.color = classColors.Warlock;
-          break;
-        case 'Warrior':
-          tr.style.color = classColors.Warrior;
-      }
-
-      tbdy.appendChild(tr);
+      tr.appendChild(td);
 
     }
 
-    tbl.appendChild(tbdy);
+    tr.style.color = setColor(datos[i][1]);
+    
+    tbdy.appendChild(tr);
 
   }
 
-  tableCreate();
+  tbl.appendChild(tbdy);
+
+}
+
+tableCreate();
