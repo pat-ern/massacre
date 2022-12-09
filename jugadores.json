@@ -65,6 +65,72 @@
             "1": "Rogue",
             "2": "Assassination",
             "3": "DPS"
+        },
+        {
+            "0": "Eldrest",
+            "1": "Paladin",
+            "2": "Protection",
+            "3": "Tank"
+        },
+        {
+            "0": "Xplotas",
+            "1": "Druid",
+            "2": "Feral",
+            "3": "DPS"
+        },
+        {
+            "0": "Mhysteria",
+            "1": "Priest",
+            "2": "Shadow",
+            "3": "DPS"
+        },
+        {
+            "0": "Xtabay",
+            "1": "Priest",
+            "2": "Shadow",
+            "3": "DPS"
+        },
+        {
+            "0": "Dashies",
+            "1": "Mage",
+            "2": "Arcane",
+            "3": "DPS"
+        },
+        {
+            "0": "Tugatita",
+            "1": "Paladin",
+            "2": "Retribution",
+            "3": "DPS"
+        },
+        {
+            "0": "Trollhere",
+            "1": "Priest",
+            "2": "Holy",
+            "3": "Healer"
+        },
+        {
+            "0": "Srloinzz",
+            "1": "Druid",
+            "2": "Restoration",
+            "3": "Healer"
+        },
+        {
+            "0": "Sicknessx",
+            "1": "Death Knight",
+            "2": "Unholy",
+            "3": "DPS"
+        },
+        {
+            "0": "Trollolo",
+            "1": "Shaman",
+            "2": "Elemental",
+            "3": "DPS"
+        },
+        {
+            "0": "Rathma",
+            "1": "Warlock",
+            "2": "Affliction",
+            "3": "DPS"
         }
     ]
 }

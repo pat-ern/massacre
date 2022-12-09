@@ -1,6 +1,8 @@
 var queryURL = "https://pat-ern.github.io/massacre/jugadores.json";
 
 criterio = "Nombre"; // criterio de ordenamiento inicial (por defecto)
+
+logsUrl = "https://classic.warcraftlogs.com/character/us/eranikus/"; // url de logs
   
 classColors = { // colores de las clases
   "Deathknight": "#C41F3B",
@@ -108,13 +110,21 @@ function crearTabla(datos) {
 
     var tr = document.createElement('tr');
 
-    for (var j = 0; j < 7; j++) { // iteracion por cada dato del jugador
+    for (var j = 0; j < 6; j++) { // iteracion por cada dato del jugador
 
       var td = document.createElement('td');
 
       if (j == 0) { // id en la tabla
 
-        td.appendChild(document.createTextNode(i+1));
+        var id;
+
+        if (i < 9) {
+          id = "0" + (i+1);
+        } else {
+          id = i+1;
+        }
+
+        td.appendChild(document.createTextNode(id));
 
       } else if (j == 2) { // clase con icono
 
@@ -122,14 +132,14 @@ function crearTabla(datos) {
         td.appendChild(document.createTextNode(" "+datos[i][j-1]));
 
       } else if (j == 3) { // especializacion con icono
-        
+
         td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][2].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
         td.appendChild(document.createTextNode(" "+datos[i][j-1]));
 
-      } else if (j == 6) { // logs 
+      } else if (j == 5) { // logs 
 
         var a = document.createElement('a');  
-        a.setAttribute('href', 'https://classic.warcraftlogs.com/character/us/eranikus/' + datos[i][0]);
+        a.setAttribute('href', logsUrl + datos[i][0]);
         a.innerHTML = 'Logs';
         td.appendChild(a);
 
