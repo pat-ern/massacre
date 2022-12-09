@@ -112,19 +112,27 @@ function crearTabla(datos) {
 
       var td = document.createElement('td');
 
-      if (j == 0) {
+      if (j == 0) { // id en la tabla
+
         td.appendChild(document.createTextNode(i+1));
-      } else if (j == 2) {
+
+      } else if (j == 2) { // clase con icono
+
         td.innerHTML = '<img src="img/class/' + datos[i][1].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][1] + '" width="20" height="auto">';
         td.appendChild(document.createTextNode(" "+datos[i][j-1]));
-      } else if (j == 3) {
+
+      } else if (j == 3) { // especializacion con icono
+        
         td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][2].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
         td.appendChild(document.createTextNode(" "+datos[i][j-1]));
-      } else if (j == 6) {
-        var a = document.createElement('a');  //crea el link
-        a.setAttribute('href', datos[i][j-1]);
+
+      } else if (j == 6) { // logs 
+
+        var a = document.createElement('a');  
+        a.setAttribute('href', 'https://classic.warcraftlogs.com/character/us/eranikus/' + datos[i][0]);
         a.innerHTML = 'Logs';
         td.appendChild(a);
+
       }  else {
         td.appendChild(document.createTextNode(datos[i][j-1]));
       }
