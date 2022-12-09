@@ -47,38 +47,42 @@ ordenarPor = (a, b) => {
 function setColor(clase) {
   let color;
   switch (clase) {
-    case 'Deathknight':
+    case 'deathknight':
       color = CLASS_COLORS.Deathknight;
       break;
-    case 'Druid':
+    case 'druid':
       color = CLASS_COLORS.Druid;
       break;
-    case 'Hunter':
+    case 'hunter':
       color = CLASS_COLORS.Hunter;
       break;
-    case 'Mage':
+    case 'mage':
       color = CLASS_COLORS.Mage;
       break;
-    case 'Paladin':
+    case 'paladin':
       color = CLASS_COLORS.Paladin;
       break;
-    case 'Priest':
+    case 'priest':
       color = CLASS_COLORS.Priest;
       break;
-    case 'Rogue':
+    case 'rogue':
       color = CLASS_COLORS.Rogue;
       break;
-    case 'Shaman':
+    case 'shaman':
       color = CLASS_COLORS.Shaman;
       break;
-    case 'Warlock':
+    case 'warlock':
       color = CLASS_COLORS.Warlock;
       break;
-    case 'Warrior':
+    case 'warrior':
       color = CLASS_COLORS.Warrior;
   }
   return color;
 };
+
+function titleCase(string) {
+  return string.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
 
 function crearTabla(datos) {
 
@@ -99,7 +103,7 @@ function crearTabla(datos) {
 
         var a = document.createElement('a');  
         a.setAttribute('href', LOGS_URL + datos[i][j]);
-        a.innerHTML = datos[i][j];
+        a.innerHTML = titleCase(datos[i][j]);
         a.style.color = setColor(datos[i][j+1]);
         td.appendChild(a);
 
@@ -111,20 +115,17 @@ function crearTabla(datos) {
           className = className.substring(5,0) + ' ' + className.substring(13,5);
         }
 
-        // tranform the first letter of each word to uppercase
-        className = className.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-
-        td.innerHTML = '<img src="img/class/' + datos[i][j].toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
-        td.appendChild(document.createTextNode(" "+className));
+        td.innerHTML = '<img src="img/class/' + datos[i][j] + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
+        td.appendChild(document.createTextNode(" " + titleCase(className)));
 
       } else if (j == 2) { // especializacion con icono
 
-        td.innerHTML = '<img src="img/spec/' + datos[i][1].toLowerCase() +"/"+ datos[i][j].toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
-        td.appendChild(document.createTextNode(" "+datos[i][j]));
+        td.innerHTML = '<img src="img/spec/' + datos[i][j-1] +"/"+ datos[i][j] + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
+        td.appendChild(document.createTextNode(" " + titleCase(datos[i][j])));
 
       } else {
 
-        td.appendChild(document.createTextNode(datos[i][j]));
+        td.appendChild(document.createTextNode(titleCase(datos[i][j])));
 
       }
 
