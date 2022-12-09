@@ -47,7 +47,7 @@ ordenarPor = (a, b) => {
 function setColor(clase) {
   let color;
   switch (clase) {
-    case 'Death Knight':
+    case 'Deathknight':
       color = CLASS_COLORS.Deathknight;
       break;
     case 'Druid':
@@ -98,19 +98,19 @@ function crearTabla(datos) {
       if (j == 0) { // Nombre con link de logs
 
         var a = document.createElement('a');  
-        a.setAttribute('href', LOGS_URL + datos[i][0]);
+        a.setAttribute('href', LOGS_URL + datos[i][j]);
         a.innerHTML = datos[i][j];
         a.style.color = setColor(datos[i][1]);
         td.appendChild(a);
 
       } else if (j == 1) { // clase con icono
 
-        td.innerHTML = '<img src="img/class/' + datos[i][1].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][1] + '" width="20" height="auto">';
+        td.innerHTML = '<img src="img/class/' + datos[i][j].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
         td.appendChild(document.createTextNode(" "+datos[i][j]));
 
       } else if (j == 2) { // especializacion con icono
 
-        td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][2].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
+        td.innerHTML = '<img src="img/spec/' + datos[i][1].replace(/\s/g, "").toLowerCase() +"/"+ datos[i][j].replace(/\s/g, "").toLowerCase() + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
         td.appendChild(document.createTextNode(" "+datos[i][j]));
 
       } else {
