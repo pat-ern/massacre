@@ -86,55 +86,56 @@ function titleCase(string) {
 
 function crearTabla(datos) {
 
+  // Ordenar js obj array por nombre
   datos.sort(this.ordenarPor);
-  var tbl = document.getElementsByTagName('table')[0];
+  // Crear tabla
+  let tbl = document.getElementsByTagName('table')[0];
+  // Hacer que tabla sea ordenable con sorttable.js
   sorttable.makeSortable(tbl);
-  var tbdy = document.getElementsByTagName('tbody')[0];
+  // Crear tbody
+  let tbdy = document.getElementsByTagName('tbody')[0];
   
-  for (var i = 0; i < datos.length; i++) {  // iteracion por cada jugador
+  // Iteracion por cada jugador
+  for (var i = 0; i < datos.length; i++) {  
 
-    var tr = document.createElement('tr');
+    let tr = document.createElement('tr');
 
-    for (var j = 0; j < 4; j++) { // iteracion por cada dato del jugador
-
-      var td = document.createElement('td');
-
-      if (j == 0) { // Nombre con link de logs
-
-        var a = document.createElement('a');  
-        a.setAttribute('href', LOGS_URL + datos[i][j]);
-        a.innerHTML = titleCase(datos[i][j]);
-        a.style.color = setColor(datos[i][j+1]);
-        td.appendChild(a);
-
-      } else if (j == 1) { // clase con icono
-
-        let className = datos[i][j].toLowerCase();
-
-        if (className == "deathknight") {
-          className = className.substring(5,0) + ' ' + className.substring(13,5);
-        }
-
-        td.innerHTML = '<img src="img/class/' + datos[i][j] + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
-        td.appendChild(document.createTextNode(" " + titleCase(className)));
-
-      } else if (j == 2) { // especializacion con icono
-
-        td.innerHTML = '<img src="img/spec/' + datos[i][j-1] +"/"+ datos[i][j] + '.png" alt="' + datos[i][j] + '" width="20" height="auto">';
-        td.appendChild(document.createTextNode(" " + titleCase(datos[i][j])));
-
-      } else {
-
-        td.appendChild(document.createTextNode(titleCase(datos[i][j])));
-
-      }
-
-      tr.appendChild(td);
-
+    // Get class name
+    let className = datos[i][1].toLowerCase();
+    if (className == "deathknight") {
+      className = className.substring(5,0) + ' ' + className.substring(13,5);
     }
 
+    // Columna 1 - Nombre
+    var td = document.createElement('td');
+    var a = document.createElement('a');  
+    a.setAttribute('href', LOGS_URL + datos[i][0]);
+    a.innerHTML = titleCase(datos[i][0]);
+    a.style.color = setColor(datos[i][1]);
+    td.appendChild(a);
+    tr.appendChild(td);
+
+    // Columna 2 - Clase
+    var td = document.createElement('td');
+    td.innerHTML = '<img src="img/class/' + datos[i][1] + '.png" alt="' + className + '" width="20" height="auto">';
+    td.appendChild(document.createTextNode(" " + titleCase(className)));
+    tr.appendChild(td);
+    
+    // Columna 3 - Spec
+    var td = document.createElement('td');
+    td.innerHTML = '<img src="img/spec/' + datos[i][1] +"/"+ datos[i][2] + '.png" alt="' + datos[i][2] + '" width="20" height="auto">';
+    td.appendChild(document.createTextNode(" " + titleCase(datos[i][2])));
+    tr.appendChild(td);
+
+    // Columna 4 - Role
+    var td = document.createElement('td');
+    td.appendChild(document.createTextNode(titleCase(datos[i][3])));
+    tr.appendChild(td);
+
+    // Set row color based on class
     tr.style.color = setColor(datos[i][1]);
     
+    // Append row to table
     tbdy.appendChild(tr);
 
   }
